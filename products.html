@@ -18,11 +18,15 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="base.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div id="nav">
+        <div id="usernav">
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -37,15 +41,15 @@
           <!--Boton para ordenar en orden ascendente-->
           <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
             <label class="btn btn-light active" id="sortAsc">
-              <input type="radio" name="options" autocomplete="off" checked>A-Z
+              <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-sort-amount-down mr-1"></i>$
             </label>
             <!--Boton para ordenar en orden descendente-->
             <label class="btn btn-light" id="sortDesc">
-              <input type="radio" name="options" autocomplete="off">Z-A
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>$
             </label>
             <!--Boton para ordenar en ordenar segun la cantidad-->
-            <label class="btn btn-light" id="sortByCount">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+            <label class="btn btn-light" id="sortByRelevancia">
+              <input type="radio" name="options" autocomplete="off">Mas vendidos
             </label>
           </div>
         </div>
@@ -104,6 +108,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 
 </html>

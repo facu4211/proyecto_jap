@@ -1,6 +1,26 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+
+
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let users = Array(
+        {
+            usuario: username.value,
+            contraseña: password.value
+        }
+    );
+    localStorage.setItem('user', JSON.stringify(users));
+    window.location.href='base.html'
+});
+
+
 document.addEventListener("DOMContentLoaded", function (e) {
 
 
@@ -23,14 +43,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-function validar() {
+/*function validar() {
 
-    let nombre= document.getElementById("name").value;
-    let pass= document.getElementById("password").value;
-    if((nombre!=="") && (pass !=="") && (pass.length >= 6) && (pass.length <=8)){
-        window.location.href="base.html"
+    let nombre = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+    if ((nombre !== "") && (pass !== "") && (pass.length >= 6) && (pass.length <= 8)) {
+        window.location.href = "base.html"
     }
-    else{
+    else {
         alert("Debe completar los campos")
     }
 }
+*/

@@ -18,17 +18,17 @@
 <body class="text-center">
 
   <div class="contenedor">
-    <form action="" method="POST" id="form">
+    <form method="POST" id="form">
         <div class="form">
             <h1>iniciar sesion</h1>
             <div class="grupo">
-                <input type="text" id="name" required><span class="barra"></span> 
+                <input class="storage" type="text" id="username" required><span class="barra"></span> 
                 <label>Nombre</label>
             </div>
             <div class="grupo">
                 <input type="password" id="password" required><span class="barra"></span> 
                 <label>Password</label>
-                <button id="login"  onclick="validar();" type="button">iniciar sesion</button>
+                <button id="login" type="submit">iniciar sesion</button>
                 
             </div>
             <!--onclick="funcion(); es para redirigir al apretar el boton, dicha funcion se encuentra en login.js-->
