@@ -1,27 +1,6 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-
-
-//const form = document.getElementById('form');
-//const username = document.getElementById('username');
-
-
-
-
-/*form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    let users = Array(
-        {
-            usuario: username.value,
-
-        }
-    );
-    localStorage.setItem('user', JSON.stringify(users));
-    window.location.href='base.html'
-});
-*/
-
 document.addEventListener("DOMContentLoaded", function (e) {
 
 
