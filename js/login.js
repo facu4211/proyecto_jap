@@ -43,15 +43,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-/*function validar() {
+function guardarDatos(){
+    localStorage.setItem('user', document.getElementById('username').value)
+}
+
+
+function validar() {
 
     let nombre = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
     if ((nombre !== "") && (pass !== "") && (pass.length >= 6) && (pass.length <= 8)) {
+        guardarDatos()
         window.location.href = "base.html"
     }
     else {
         alert("Debe completar los campos")
     }
 }
-*/

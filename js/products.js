@@ -9,7 +9,6 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-
 function sortProduct(criteria, array) {
     let result = [];
     if (criteria === ORDER_ASC_BY_COST) {
