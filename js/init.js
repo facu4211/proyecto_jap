@@ -40,8 +40,21 @@ var getJSONData = function(url){
     });
 }
 
+
+//creo esta funcion para mostrar el usuario siempre y cuando siga las condiciones del if
+function getUser(){
+  let nombre = localStorage.getItem("user");
+  if(nombre!=undefined && nombre!=""){
+    document.getElementById("userNav").innerHTML += " " + nombre;
+  }else{
+    window.location.href = "index.html"
+  }
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  getUser();
 });

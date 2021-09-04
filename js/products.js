@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         else{
             maxCount = undefined;
         }
-
+        //llamo a showProductList() para mostrar las listas ordenadas segun el criterio 
         showProductList();
     });
 });

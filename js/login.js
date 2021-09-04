@@ -2,24 +2,25 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
+
+//const form = document.getElementById('form');
+//const username = document.getElementById('username');
 
 
 
-form.addEventListener('submit', function (event) {
+
+/*form.addEventListener('submit', function (event) {
     event.preventDefault();
     let users = Array(
         {
             usuario: username.value,
-            contraseña: password.value
+
         }
     );
     localStorage.setItem('user', JSON.stringify(users));
     window.location.href='base.html'
 });
-
+*/
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -43,8 +44,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
+//creo esta funcion para guardar el valor del input en localStorage 
 function guardarDatos(){
-    localStorage.setItem('user', document.getElementById('username').value)
+    let nombre = document.getElementById("username").value;
+    localStorage.setItem("user", nombre)
 }
 
 
@@ -53,6 +56,7 @@ function validar() {
     let nombre = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
     if ((nombre !== "") && (pass !== "") && (pass.length >= 6) && (pass.length <= 8)) {
+        //y la llamo dentro de validar()
         guardarDatos()
         window.location.href = "base.html"
     }
