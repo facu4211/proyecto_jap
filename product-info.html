@@ -11,26 +11,110 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav container justify-content-between">
+          <li class="nav-item">
+            <a href="base.html" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="categories.html" class="nav-link">Categoria</a>
+          </li>
+          <li class="nav-item">
+            <a href="products.html" class="nav-link">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a href="sell.html" class="nav-link">Vender</a>
+          </li>
+          <li class="nav-item">
+            <a href="cart.html" class="nav-link">Mi carrito</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Bienvenid@
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Mi perfil</a>
+              <a class="dropdown-item" href="#">Cerrar sesion</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container-all">
+    <div class="text-center">
+      <h2 class="title" id="productName"></h2>
+    </div>
+    <table class="table table-bordered table-dark" id="tabla">
+      <tbody>
+        <tr>
+          <td>Categoria</td>
+          <td id="productCat"></td>
+        </tr>
+        <tr>
+          <td>Vendidos</td>
+          <td id="soldCount"></td>
+        </tr>
+        <tr>
+          <td id="currency"></td>
+          <td id="cost"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-secondary btn-lg" id="boton">Agregar al carrito</button>
+    <button type="button" class="btn btn-primary btn-lg" id="boton2">Comprar</button>
+
+    <div class="product">
+      <div class="img-cont">
+        <img id="imageBox" src="/img/prod1_3.jpg">
+      </div>
+      <div class="product-small-img">
+        <img src="/img/prod1.jpg" onclick="myFunction(this)">
+        <img src="/img/prod1_1.jpg" onclick="myFunction(this)">
+        <img src="img/prod1_2.jpg" onclick="myFunction(this)">
+        <img src="img/prod1_4.jpg" onclick="myFunction(this)">
+        <img src="img/prod1_3.jpg" onclick="myFunction(this)">
+      </div>
+    </div>
+    <p id="description"></p>
+
+  </div>
+  <div class="container-comments">
+    <div class="row comentarios justify-content-center">
+      <div class="col-6">
+        <form action=""  id="formulario" class="form-comentarios d-flex justify-content-end flex-wrap">
+          <textarea name="" id="textarea" placeholder="Comentario"></textarea>
+          
+          <button class="btn" type="button" onclick="saveComment()">Comentar</button>
+        </form>
+        <div class="form-group">
+          <label for="score">Valora nuestro producto</label>
+          <select id="score" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        <div id="comentarios"></div>
+        
+        </div>
+      </div>
     </div>
   </div>
   <footer class="text-muted">
@@ -54,6 +138,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/product-comments.js"></script>
 </body>
 
 </html>

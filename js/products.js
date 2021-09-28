@@ -1,9 +1,9 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-const ORDER_ASC_BY_COST = "AZ";
-const ORDER_DESC_BY_COST = "ZA";
-const ORDER_BY_PROD_RELEVANCIA = "Cant.";
+const ORDER_ASC_BY_COST = ">";
+const ORDER_DESC_BY_COST = "<";
+const ORDER_BY_PROD_RELEVANCIA = "Cost";
 var currentProductArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
@@ -12,7 +12,7 @@ var maxCount = undefined;
 function sortProduct(criteria, array) {
     let result = [];
     if (criteria === ORDER_ASC_BY_COST) {
-        /*defino el criterio para cuando el a es menor a b y le paso el return -1 para que el sort pase el a antes que el b, hacer por cost*/
+        /*defino el criterio para cuando el a es menor a b y le paso el return -1 para que el sort pase el a antes que el b*/
         result = array.sort(function (a, b) {
             if (a.cost < b.cost) { return -1; }
             if (a.cost > b.cost) { return 1; }
@@ -24,7 +24,6 @@ function sortProduct(criteria, array) {
             if (a.cost < b.cost) { return 1; }
             return 0;
         });
-        /*soldcount en products*/
     } else if (criteria === ORDER_BY_PROD_RELEVANCIA) {
         result = array.sort(function (a, b) {
             let aCount = a.soldCount;
@@ -79,6 +78,7 @@ function sortAndShowProducts(sortCriteria, listaProduct) {
     if (listaProduct != undefined) {
         currentProductArray = listaProduct;
     }
+    //guardo la lista en el estado actual de ordenamiento en una variable global para mostrarla en el html
     currentProductArray = sortProduct(currentSortCriteria, currentProductArray);
 
     //Muestro las categorías ordenadas
@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             sortAndShowProducts(ORDER_ASC_BY_COST, result.data)
         }
     });
+    //aca llamo al id y le agrego el evento de que al hacer click ordene segun el criterio de ordenamiento que seleccione
     document.getElementById("sortAsc").addEventListener("click", function () {
         sortAndShowProducts(ORDER_ASC_BY_COST);
     });
